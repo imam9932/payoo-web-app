@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <!-- daisyUI cdn -->
+   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+   <!-- tailwind cdn -->
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+      <!-- font awesome cdn  -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class=" h-[100vh]">
+  <!-- nav section start  -->
+  <section class="max-w-lg mx-auto border-b-1 border-gray-300 p-3 bg-gray-100 rounded-[10px]"  >
+    <nav class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+      <img class='w-[50px] h-[48px]'src="assets/Group.png" alt="group image">
+      <div>
+  <p class="text-[18px] font-bold">$ <span id="available-amount">45000</span>
+  </p>
+  <p class="text-[14px]">Available Balance</p>
+      </div>
+  </div>
+  <button class="w-[120px] h-[38px] border-1 border-[#0808081a] rounded-[10px] text-[18px] text-[#08080880] flex items-center justify-center gap-2"><img class='w-[20px] h-[20px]'src="Payoo-MFS-Resources/assets/Frame.png" alt="">Log Out</button>
+    </nav>
+  </section>
+  <!-- welcome section start -->
+   <section class="max-w-lg mx-auto mt-[30px] bg-gray-100 rounded-[10px]">
+<div class="p-3">
+  <h1 class="text-[24px] font-bold mb-4">🔥 Welcome to Payooo!</h1>
+  <p class="text-[18px] text-[#08080880]">Enjoy easy and convenient financial services with us. <br> Cashout charge is low and </p>
+</div>
+   </section>
+
+   <!-- cart section start  -->
+    <section class="max-w-lg mx-auto mt-[30px grid grid-cols-3 grid-rows-3 gap-3 p-3 bg-gray-100 rounded-[10px]">
+      <div id='cart-add-money'  class="h-[90px] w-[140px] flex flex-col items-center border-1 border-gray-300 rounded-[10px] p-3">
+        <img  src="assets/wallet1.png" alt="add money">
+        <p class="mt-[10px]">Add Money</p>
+      </div>
+      <div id="cart-cash-out"  class="h-[90px] w-[140px] flex flex-col items-center border-1 border-gray-300 rounded-[10px] p-3">
+        <img  src="assets/send1.png" alt="add money">
+        <p class="mt-[10px]">Cashout</p>
+      </div>
+      <div id="cart-transfer-money" class="h-[90px] w-[140px] flex flex-col items-center border-1 border-gray-300 rounded-[10px] p-3">
+        <img  src="assets/money1.png" alt="add money">
+        <p class="mt-[10px]">Transfer Money</p>
+      </div>
+      <div id="cart-get-bonus" class="h-[90px] w-[140px] flex flex-col items-center border-1 border-gray-300 rounded-[10px] p-3">
+        <img  src="assets/bonus1.png" alt="add money">
+        <p class="mt-[10px]">Get Bonus</p>
+      </div>
+      <div id="cart-pay-bill"class="h-[90px] w-[140px] flex flex-col items-center border-1 border-gray-300 rounded-[10px] p-3">
+        <img  src="assets/purse1.png" alt="add money">
+        <p class="mt-[10px]">Pay Bill</p>
+      </div>
+      <div id="cart-transactions" class="h-[90px] w-[140px] flex flex-col items-center border-1 border-gray-300 rounded-[10px] p-3">
+        <img  src="assets/transaction1.png" alt="add money">
+        <p class="mt-[10px]">Transactions</p>
+      </div>
+    </section>
+
+    <section >
+      <div class="max-w-lg mx-auto bg-gray-100 mt-[10px]">
+
+        <!-- latest payment section start -->
+      <div class='form' id="cart-latest-payment-parent" style="display:none ;">
+        <div class="flex justify-between items-center p-3">
+          <h3  class="text-[18px] font-bold ml-[20px]">Latest Payment</h3>
+          <h4 class="text-[16px] text-black p-3">View All</h4>
+        </div>
+        <div>
+          <div class= " electricity bill bg-white w-[480px] h-[62px] ml-[15px] rounded-[10px] flex justify-between p-3 mb-[20px]">
+            <div class="flex items-center gap-3 p-3">
+             <div class="bg-gray-100 h-[40px] w-[40px] rounded-full flex items-center justify-center">
+               <img  src="assets/wallet1.png" alt="wallet">
+             </div>
+              <div>
+                <h1 class="text-[18px] font-semibold">Electricity Bill</h1>
+                <p class="text-[14px]">Today 01:44 AM</p>
+              </div>
+            </div>
+            <div class="w-[20px] h-[10px] mt-[10px]">
+              <img src="Payoo-MFS-Resources/assets/three dot.png" alt="">
+            </div>
+          </div>
+          <div class= " bank deposit bg-white w-[480px] h-[62px] ml-[15px] rounded-[10px] flex justify-between p-3 mb-[20px]">
+            <div class="flex items-center gap-3 p-3">
+             <div class="bg-gray-100 h-[40px] w-[40px] rounded-full flex items-center justify-center">
+               <img  src="assets/wallet1.png" alt="wallet">
+             </div>
+              <div>
+                <h1 class="text-[18px] font-semibold">Bank Deposit</h1>
+                <p class="text-[14px]">Today 01:40 AM</p>
+              </div>
+            </div>
+            <div class="w-[20px] h-[10px] mt-[10px]">
+              <img src="Payoo-MFS-Resources/assets/three dot.png" alt="">
+            </div>
+          </div>
+          <div class= " Mobile Recharge bg-white w-[480px] h-[62px] ml-[15px] rounded-[10px] flex justify-between p-3 mb-[20px]">
+            <div class="flex items-center gap-3 p-3">
+             <div class="bg-gray-100 h-[40px] w-[40px] rounded-full flex items-center justify-center">
+               <img  src="assets/wallet1.png" alt="wallet">
+             </div>
+              <div>
+                <h1 class="text-[18px] font-semibold">Mobile Recharge</h1>
+                <p class="text-[14px]">Today 01:33 AM</p>
+              </div>
+            </div>
+            <div class="w-[20px] h-[10px] mt-[10px]">
+              <img src="Payoo-MFS-Resources/assets/three dot.png" alt="">
+            </div>
+          </div>
+          <div class= " Gas bill bg-white w-[480px] h-[62px] ml-[15px] rounded-[10px] flex justify-between p-3 mb-[20px]">
+            <div class="flex items-center gap-3 p-3">
+             <div class="bg-gray-100 h-[40px] w-[40px] rounded-full flex items-center justify-center">
+               <img  src="assets/wallet1.png" alt="wallet">
+             </div>
+              <div>
+                <h1 class="text-[18px] font-semibold">Gas Bill</h1>
+                <p class="text-[14px]">Yesterday 11:00 PM</p>
+              </div>
+            </div>
+            <div class="w-[20px] h-[10px] mt-[10px]">
+              <img src="Payoo-MFS-Resources/assets/three dot.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- add money section start -->
+
+      <div  class='form'id="cart-add-money-parent"  >
+        <h3 class="text-[18px] font-bold ml-[20px]">Add Money</h3>
+      <form class=" bg-gray-100 p-5 rounded-[10px]" >
+        <div>
+          <h1 class="font-semibold">Select a bank</h1>
+          <select id='bank'class="select  bg-white mt-3 w-[380px] h-[52px] rounded-[32px]">
+  <option >Select a Bank</option>
+  <option>Brac Bank</option>
+  <option>IFIC Bank</option>
+  <option>Jhamuna Bank</option>
+</select>
+        </div>
+        <div class=" acc number mt-5">
+      <label class="text-[16px] font-semibold" for=" ">Bank Account Number</label>
+      <br>
+      <input type="number" placeholder="Enter 11 digit account number" id="account-number" class="input bg-white mt-3  w-[380px] h-[52px] rounded-[32px]" />
+    </div>
+    <div class="amount to add mt-5">
+      <label class="text-[16px] font-semibold" for=" ">Amount to Add</label>
+      <br>
+      <input type="number" placeholder="Add Amount to withdraw" id="amount-withdraw" class="input bg-[#ffffff] mt-3 w-[380px] h-[52px] rounded-[32px]" />
+    </div>
+    <div class="pin number mt-5">
+      <label class="text-[16px] font-semibold" for=" ">PIN Number</label>
+      <br>
+      <input type="text" placeholder="Enter 4 Digit PIN number" id="add-pin" class="input bg-[#ffffff] mt-3 w-[380px] h-[52px] rounded-[32px]" />
+    </div>
+    <button type="button" class="btn bg-[#0874f2] w-[380px] h-[53px] flex justify-center items-center rounded-[32px] mt-[15px] text-white text-[20px] font-semibold" id="btn-add-money">Add Money</button>
+      </form>
+      </div>
+
+      <!-- cash Out section start -->
+       
+       <div  class='form'id="cart-cash-out-parent" style="display: none;" >
+        <h3 class="text-[18px] font-bold ml-[20px] ">Cash Out</h3>
+      <form class=" bg-gray-100 p-5 rounded-[10px]" >
+      <div class=" agent number mt-5">
+      <label class="text-[16px] font-semibold " for=" ">Agent Number</label>
+      <br>
+      <input type="number" placeholder="Enter 11 digit number" id="agent-number" class="input bg-white mt-3  w-[380px] h-[52px] rounded-[32px]" />
+    </div>
+    <div class="amount mt-5">
+      <label class="text-[16px] font-semibold" for=" ">Amount</label>
+      <br>
+      <input type="number" placeholder="Enter amount to withdraw" id="amount-withdraw-to-agent" class="input bg-[#ffffff] mt-3 w-[380px] h-[52px] rounded-[32px]" />
+    </div>
+    <div class="pin number mt-5">
+      <label class="text-[16px] font-semibold" for=" ">PIN Number</label>
+      <br>
+      <input type="text" placeholder="Enter 4 Digit PIN number" id="add-pin-for-cash-out" class="input bg-[#ffffff] mt-3 w-[380px] h-[52px] rounded-[32px]" />
+    </div>
+    <button type="button" class="btn bg-[#0874f2] w-[380px] h-[53px] flex justify-center items-center rounded-[32px] mt-[15px] text-white text-[20px] font-semibold" id="btn-withdraw-money">Withdraw Money</button>
+      </form>
+      </div>
+
+      <!-- transfer money section start  -->
+       <div class='form' id="cart-transfer-money-parent" style="display: none;" >
+      <h3 class="text-[18px] font-bold ml-[20px] ">Transfer Money</h3>
+      <form class=" bg-gray-100 p-5 rounded-[10px]" >
+      <div class=" user account number mt-5">
+      <label class="text-[16px] font-semibold " for=" ">User Account Number</label>
+      <br>
+      <input type="number" placeholder="Enter 11 digit number" id="user-account-number" class="input bg-white mt-3  w-[380px] h-[52px] rounded-[32px]" />
+    </div>
+    <div class="amount for transfer money mt-5">
+      <label class="text-[16px] font-semibold" for=" ">Amount</label>
+      <br>
+      <input type="number" placeholder="Enter amount to transfer" id="amount-for-transfer" class="input bg-[#ffffff] mt-3 w-[380px] h-[52px] rounded-[32px]" />
+    </div>
+    <div class="pin number for transfer mt-5">
+      <label class="text-[16px] font-semibold" for=" ">PIN Number</label>
+      <br>
+      <input type="text" placeholder="Enter 4 Digit PIN number" id="add-pin-for-transfer" class="input bg-[#ffffff] mt-3 w-[380px] h-[52px] rounded-[32px]" />
+    </div>
+    <button type="button" class="btn bg-[#0874f2] w-[380px] h-[53px] flex justify-center items-center rounded-[32px] mt-[15px] text-white text-[20px] font-semibold" id="btn-send-now">Send Now</button>
+      </form>
+       </div>
+
+      <!-- get bonus section start  -->
+       <div class='form' id="cart-get-bonus-parent" style="display: none;" >
+      <h3 class="text-[18px] font-bold ml-[20px] ">Get Bonus</h3>
+      <form class=" bg-gray-100 p-5 rounded-[10px]" >
+      <div class=" bonus coupon mt-5">
+      <label class="text-[16px] font-semibold " for=" ">Enter Bonus Coupon</label>
+      <br>
+      <input type="text" placeholder="Enter your coupon" id="enter-coupon" class="input bg-white mt-3  w-[380px] h-[52px] rounded-[32px]" />
+    </div>
+     
+    <button type="button" class="btn bg-[#0874f2] w-[380px] h-[53px] flex justify-center items-center rounded-[32px] mt-[15px] text-white text-[20px] font-semibold" id="btn-get-bonus">Get Bonus</button>
+      </form>
+       </div>
+
+        <!-- pay bill section start  -->
+       <div class='form' id="cart-pay-bil-parent" style="display: none ;" >
+      <h3 class="text-[18px] font-bold ml-[20px] ">Pay Bill</h3>
+      <form class=" bg-gray-100 p-5 rounded-[10px]" >
+        <div>
+          <h1 class="font-semibold">Select To pay</h1>
+          <select id='pay-bill'class="select  bg-white mt-3 w-[380px] h-[52px] rounded-[32px]">
+  <option >Select a Bank</option>
+  <option>Brac Bank</option>
+  <option>IFIC Bank</option>
+  <option>Jhamuna Bank</option>
+</select>
+        </div>
+      <div class=" biller account number mt-5">
+      <label class="text-[16px] font-semibold " for=" ">Biller Account Number</label>
+      <br>
+      <input type="number" placeholder="Enter account number" id="biller-account-number" class="input bg-white mt-3  w-[380px] h-[52px] rounded-[32px]" />
+    </div>
+    <div class="amount to pay mt-5">
+      <label class="text-[16px] font-semibold" for=" ">Amount to Pay</label>
+      <br>
+      <input type="number" placeholder="Add Amount to pay" id="amount-for-pay" class="input bg-[#ffffff] mt-3 w-[380px] h-[52px] rounded-[32px]" />
+    </div>
+    <div class="pin number for pay bill mt-5">
+      <label class="text-[16px] font-semibold" for=" ">PIN Number</label>
+      <br>
+      <input type="text" placeholder="Enter 4 Digit PIN number" id="add-pin-for-pay-bill" class="input bg-[#ffffff] mt-3 w-[380px] h-[52px] rounded-[32px]" />
+    </div>
+    <button type="button" class="btn bg-[#0874f2] w-[380px] h-[53px] flex justify-center items-center rounded-[32px] mt-[15px] text-white text-[20px] font-semibold" id="btn-pay-now">Pay Now</button>
+      </form>
+       </div>
+
+        <!-- transactions section start  -->
+      <div class='form' id="cart-transactions-parent" style="display: none;">
+        <div class="flex justify-between items-center p-3">
+          <h3  class="text-[18px] font-bold ml-[20px]">Transaction History</h3>
+          <h4 class="text-[16px] text-black p-3">View All</h4>
+        </div>
+        <div>
+          <div class= " electricity bill bg-white w-[480px] h-[62px] ml-[15px] rounded-[10px] flex justify-between p-3 mb-[20px]">
+            <div class="flex items-center gap-3 p-3">
+             <div class="bg-gray-100 h-[40px] w-[40px] rounded-full flex items-center justify-center">
+               <img  src=" assets/wallet1.png" alt="wallet">
+             </div>
+              <div>
+                <h1 class="text-[18px] font-semibold">Electricity Bill</h1>
+                <p class="text-[14px]">Today 01:44 AM</p>
+              </div>
+            </div>
+            <div class="w-[20px] h-[10px] mt-[10px]">
+              <img src=" assets/three dot.png" alt="">
+            </div>
+          </div>
+          <div class= " bank deposit bg-white w-[480px] h-[62px] ml-[15px] rounded-[10px] flex justify-between p-3 mb-[20px]">
+            <div class="flex items-center gap-3 p-3">
+             <div class="bg-gray-100 h-[40px] w-[40px] rounded-full flex items-center justify-center">
+               <img  src=" assets/wallet1.png" alt="wallet">
+             </div>
+              <div>
+                <h1 class="text-[18px] font-semibold">Bank Deposit</h1>
+                <p class="text-[14px]">Today 01:40 AM</p>
+              </div>
+            </div>
+            <div class="w-[20px] h-[10px] mt-[10px]">
+              <img src="assets/three dot.png" alt="">
+            </div>
+          </div>
+          <div class= " Mobile Recharge bg-white w-[480px] h-[62px] ml-[15px] rounded-[10px] flex justify-between p-3 mb-[20px]">
+            <div class="flex items-center gap-3 p-3">
+             <div class="bg-gray-100 h-[40px] w-[40px] rounded-full flex items-center justify-center">
+               <img  src=" assets/wallet1.png" alt="wallet">
+             </div>
+              <div>
+                <h1 class="text-[18px] font-semibold">Mobile Recharge</h1>
+                <p class="text-[14px]">Today 01:33 AM</p>
+              </div>
+            </div>
+            <div class="w-[20px] h-[10px] mt-[10px]">
+              <img src=" assets/three dot.png" alt="">
+            </div>
+          </div>
+          <div class= " Gas bill bg-white w-[480px] h-[62px] ml-[15px] rounded-[10px] flex justify-between p-3 mb-[20px]">
+            <div class="flex items-center gap-3 p-3">
+             <div class="bg-gray-100 h-[40px] w-[40px] rounded-full flex items-center justify-center">
+               <img  src=" assets/wallet1.png" alt="wallet">
+             </div>
+              <div>
+                <h1 class="text-[18px] font-semibold">Gas Bill</h1>
+                <p class="text-[14px]">Yesterday 11:00 PM</p>
+              </div>
+            </div>
+            <div class="w-[20px] h-[10px] mt-[10px]">
+              <img src=" assets/three dot.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+     </section>
+      <!-- cash Out section start
+     <section   class="max-w-lg mx-auto bg-gray-100 mt-[10px]">
+      
+     </section> -->
+     <script src="home.js"></script>
+</body>
+</html>
