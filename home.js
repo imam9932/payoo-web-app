@@ -1,4 +1,5 @@
 const validPIN=1234;
+const transactionData=[]
 
 // function to get input value 
 function getInputValueNumber(id){
@@ -35,6 +36,20 @@ function getToggleValue(id){
    document.getElementById(id).style.display='block'
 }
 
+// function for toggle handle 
+
+function getToggleHandle(id){
+  const formBtn=document.getElementsByClassName('form-btn')
+
+   for(const btn of formBtn){
+    btn.classList.remove('border-1','border-gray-300')
+    btn.classList.remove('border-2','border-black-700','bg-[#0874f273]')
+   }
+
+   document.getElementById(id).classList.remove('border-gray-300')
+   document.getElementById(id).classList.add('border-2','border-black-700','bg-[#0874f273]')
+}
+
 // cart add money
 document.getElementById('btn-add-money').addEventListener('click',function(event){
    const bank=getInputValueNumber('bank')
@@ -57,6 +72,13 @@ document.getElementById('btn-add-money').addEventListener('click',function(event
   const totalNewAvailableBalance=amount+availableBalance;
 
   document.getElementById('available-amount').innerText=totalNewAvailableBalance;
+
+  // for transaction history
+  const data={
+    name:'Add Money',
+    date :new Date().toLocaleTimeString()
+  }
+  transactionData.push=data;
  })
 
  
@@ -94,7 +116,42 @@ if(withdrawAmount>availableBalance){
    const availableBalanceAfterCashOut=availableBalance-withdrawAmount;
 
    document.getElementById('available-amount').innerText=availableBalanceAfterCashOut;
+
+   // for transaction history
+  const data={
+    name:'Cash Out',
+    date :new Date().toLocaleTimeString()
+  }
+  transactionData.push=data;
+  console.log(transactionData);
   
+  })
+
+  // for transactions list 
+  document.getElementById('cart-transactions').addEventListener('click',function(){
+    const transactionContainer=document.getElementById('transaction-container')
+
+    for(const data of transactionData){
+      const div=document.createElement('div')
+      div.innerHTML=`
+      
+      <div class=" bg-white rounded-xl p-3 flex justify-between items-center mt-3">
+              <div class="flex items-center">
+                  <div class="p-3 rounded-full bg-[#f4f5f7]">
+                    <img src="./assets/wallet1.png" class="mx-auto" alt="" />
+                  </div>
+                  <div class="ml-3">
+                    <h1>${data.name}</h1>
+                    <p>${data.date}</p>
+                  </div>
+              </div>
+      
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+        `
+
+        transactionContainer.appendChild(div)
+    }
   })
 
 
@@ -102,61 +159,44 @@ if(withdrawAmount>availableBalance){
    
 
 document.getElementById('cart-add-money').addEventListener('click',function(){
-  // document.getElementById('cart-cash-out-parent').style.display='none'
-  //  document.getElementById('cart-transfer-money-parent').style.display='none'
-  // document.getElementById('cart-add-money-parent').style.display='block'
-
-
-  // const forms=document.getElementsByClassName('form')
-
-  // for(const form of forms){
-  //   form.style.display='none'
-  // }
-  //  document.getElementById('cart-add-money-parent').style.display='block'
-
    getToggleValue('cart-add-money-parent')
 
+   getToggleHandle('cart-add-money');
 })
 
 
 document.getElementById('cart-cash-out').addEventListener('click',function(){
-  // document.getElementById('cart-add-money-parent').style.display='none'
-  //  document.getElementById('cart-transfer-money-parent').style.display='none'
-  // document.getElementById('cart-cash-out-parent').style.display='block'
+  getToggleValue('cart-cash-out-parent')
 
-  // const forms=document.getElementsByClassName('form')
-
-  // for(const form of forms){
-  //   form.style.display='none'
-  // }
-  //  document.getElementById('cart-cash-out-parent').style.display='block'
-
-    getToggleValue('cart-cash-out-parent')
-})
+  getToggleHandle('cart-cash-out');
+ })
 
 
 document.getElementById('cart-transfer-money').addEventListener('click',function(){
-    // document.getElementById('cart-add-money-parent').style.display='none'
-    //   document.getElementById('cart-cash-out-parent').style.display='none'
-    //   document.getElementById('cart-transfer-money-parent').style.display='block'
+     getToggleValue('cart-transfer-money-parent')
 
-  //   const forms=document.getElementsByClassName('form')
+     getToggleHandle('cart-transfer-money');
+ })
 
-  // for(const form of forms){
-  //   form.style.display='none'
-  // }
-  //  document.getElementById('cart-transfer-money-parent').style.display='block'
 
-    getToggleValue('cart-transfer-money-parent')
-})
 
 document.getElementById('cart-get-bonus').addEventListener('click',function(){
 getToggleValue('cart-get-bonus-parent')
-  })
+
+getToggleHandle('cart-get-bonus');
+ })
+
+
 document.getElementById('cart-pay-bill').addEventListener('click',function(){
 getToggleValue('cart-pay-bil-parent')
-  })
+
+getToggleHandle('cart-pay-bill');
+ })
+
+
 document.getElementById('cart-transactions').addEventListener('click',function(){
 getToggleValue('cart-transactions-parent')
-  })
+
+getToggleHandle('cart-transactions');
+})
 
